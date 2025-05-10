@@ -1,6 +1,7 @@
-import { AspectRatio, Card, Image } from "@chakra-ui/react";
 import { type Game } from "../hooks/useGames";
+import { AspectRatio, Box, Card, Image } from "@chakra-ui/react";
 import PlatformList from "./PlatformList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   games: Game;
@@ -13,13 +14,17 @@ function GameCard({ games }: Props) {
 
   return (
     <Card.Root overflow="hidden">
-      <AspectRatio ratio={2 / 1}>
+      <AspectRatio ratio={{ base: 1 / 1, md: 2 / 1 }}>
         <Image src={games.background_image} />
       </AspectRatio>
 
       <Card.Body>
         <Card.Title textWrap={"nowrap"}>{games.name}</Card.Title>
-        <PlatformList platform={platformSlug} />
+
+        <Box display="flex" justifyContent={"space-between"}>
+          <PlatformList platform={platformSlug} />
+          <CriticScore metacritic={games.metacritic} />
+        </Box>
       </Card.Body>
     </Card.Root>
   );
