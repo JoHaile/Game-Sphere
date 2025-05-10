@@ -1,4 +1,4 @@
-                                                                        GameSphere 🎮
+                                                                  GameSphere 🎮
 Welcome to GameSphere, your ultimate hub for discovering the latest games, critic scores, platform availability, ratings, and in-depth game descriptions. Whether you're a casual player or a hardcore gamer, GameSphere helps you stay updated with the latest releases and reviews across multiple gaming platforms.
 
 Features
