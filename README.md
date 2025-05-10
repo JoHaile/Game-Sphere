@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Here's a README.md file for your gaming platform! It outlines the purpose, features, and installation instructions clearly.
 
 ---
