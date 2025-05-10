@@ -1,4 +1,4 @@
-import { Grid, GridItem, Text } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
 
@@ -21,6 +21,9 @@ const App = () => {
           colSpan={{ base: 5, md: 5, lg: 5 }}
           px={{ base: "30px", md: "20px" }}
         >
+          {/* for the dynamic headers */}
+          {/* <HStack>nav bar</HStack> */}
+
           <GameGrid />
         </GridItem>
       </Grid>
