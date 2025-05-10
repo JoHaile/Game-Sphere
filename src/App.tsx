@@ -1,10 +1,11 @@
-import { Grid, GridItem, HStack } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
     <>
-      <HStack>nav bar</HStack>
+      <NavBar />
       <Grid gridTemplateColumns={`repeat(6, 1fr)`}>
         <GridItem
           bg={"dodgerblue"}
