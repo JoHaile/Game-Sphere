@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-Here's a README.md file for your gaming platform! It outlines the purpose, features, and installation instructions clearly.
-
----
-
 GameSphere 🎮
 
 Welcome to GameSphere, your ultimate hub for discovering the latest games, critic scores, platform availability, ratings, and in-depth game descriptions. Whether you're a casual player or a hardcore gamer, GameSphere helps you stay updated with the latest releases and reviews across multiple gaming platforms.
@@ -49,8 +44,3 @@ Technologies Used
 
 Contributing  
 Contributions are welcome! If you’d like to improve GameSphere, submit a pull request or open an issue.
-
-License  
-This project is licensed under the MIT License.
-
----
