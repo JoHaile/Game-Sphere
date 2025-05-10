@@ -30,7 +30,7 @@ function PlatformList({ platform }: Props) {
     web: FaGlobe,
   };
   return (
-    <HStack color="gray.400" my={"10px"}>
+    <HStack color="gray.500" my={"10px"}>
       {platform.map((plat) => {
         return <Icon key={plat.id} as={iconsMap[plat.slug]}></Icon>;
       })}

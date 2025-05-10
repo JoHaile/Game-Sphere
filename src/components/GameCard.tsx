@@ -1,4 +1,4 @@
-import { Card, Image } from "@chakra-ui/react";
+import { AspectRatio, Card, Image } from "@chakra-ui/react";
 import { type Game } from "../hooks/useGames";
 import PlatformList from "./PlatformList";
 
@@ -13,9 +13,12 @@ function GameCard({ games }: Props) {
 
   return (
     <Card.Root overflow="hidden">
-      <Image src={games.background_image} />
+      <AspectRatio ratio={2 / 1}>
+        <Image src={games.background_image} />
+      </AspectRatio>
+
       <Card.Body>
-        <Card.Title>{games.name}</Card.Title>
+        <Card.Title textWrap={"nowrap"}>{games.name}</Card.Title>
         <PlatformList platform={platformSlug} />
       </Card.Body>
     </Card.Root>
