@@ -1,6 +1,7 @@
 import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
+import GenresGrid from "./components/GenresGrid";
 
 const App = () => {
   return (
@@ -8,13 +9,13 @@ const App = () => {
       <NavBar />
       <Grid gridTemplateColumns={`repeat(6, 1fr)`}>
         <GridItem
-          bg={"dodgerblue"}
+          // bg={"dodgerblue"}
           position={"relative"}
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
           h="100"
         >
-          aside
+          <GenresGrid />
         </GridItem>
         <GridItem
           // bg="purple.400"
