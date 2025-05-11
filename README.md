@@ -35,7 +35,7 @@ npm start
 
 Usage
 
-- Browse and filter games by genre.
+- Browse and filter games by genres.
 - Check critic scores, platform, release date and user ratings.
 - Read detailed descriptions to understand the gameplay.
 
