@@ -35,8 +35,8 @@ npm start
 
 Usage
 
-- Browse and filter games by platform, genre, or release date.
-- Check critic scores and user ratings before making a purchase.
+- Browse and filter games by genre.
+- Check critic scores, platform, release date and user ratings.
 - Read detailed descriptions to understand the gameplay.
 
 Technologies Used  
