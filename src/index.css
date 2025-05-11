@@ -8,4 +8,5 @@ body {
   min-height: 100vh;
   max-width: 1800px;
   margin: auto;
+  position: relative;
 }

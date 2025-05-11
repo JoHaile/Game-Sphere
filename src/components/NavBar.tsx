@@ -4,7 +4,7 @@ import { ColorModeButton } from "./ui/color-mode";
 
 function NavBar() {
   return (
-    <HStack mb="10px">
+    <HStack mb="10px" position={"sticky"}>
       <Image src={Logo} boxSize="60px" />
       <Text>NavBar</Text>
       <Spacer />
