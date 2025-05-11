@@ -4,9 +4,9 @@ import { ColorModeButton } from "./ui/color-mode";
 
 function NavBar() {
   return (
-    <HStack mb="10px">
+    <HStack mb="10px" mx={5}>
       <Image src={Logo} boxSize="60px" />
-      <Text>NavBar</Text>
+      <Text>Game Sphere</Text>
       <Spacer />
       <ColorModeButton />
     </HStack>
