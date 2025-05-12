@@ -13,6 +13,8 @@ const App = () => {
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
           h="100"
+          py={"10px"}
+          px={{ base: "10px", lg: "30px" }}
         >
           <GenresGrid />
         </GridItem>

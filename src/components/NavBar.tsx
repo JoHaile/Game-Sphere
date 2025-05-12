@@ -4,11 +4,11 @@ import { ColorModeButton } from "./ui/color-mode";
 
 function NavBar() {
   return (
-    <HStack mb="10px" mx={5}>
+    <HStack mb="10px" px={{ base: "10px", lg: "30px" }}>
       <Image src={Logo} boxSize="60px" />
       <Text>Game Sphere</Text>
       <Spacer />
-      <ColorModeButton />
+      <ColorModeButton colorPalette={"green"} />
     </HStack>
   );
 }
