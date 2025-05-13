@@ -15,23 +15,25 @@ function GameCard({ games }: Props) {
   );
 
   return (
-    <Card.Root overflow="hidden">
-      <AspectRatio ratio={{ base: 1 / 1, md: 1 / 1 }}>
-        {/* for offline */}
-        {/* <Image src={games.background_image} /> */}
+    <>
+      <Card.Root overflow="hidden">
+        <AspectRatio ratio={{ base: 1 / 1, md: 1 / 1 }}>
+          {/* for offline */}
+          {/* <Image src={games.background_image} /> */}
 
-        <Image src={CroppedImage(games.background_image)} />
-      </AspectRatio>
+          <Image src={CroppedImage(games.background_image)} />
+        </AspectRatio>
 
-      <Card.Body>
-        <Card.Title>{games.name}</Card.Title>
+        <Card.Body>
+          <Card.Title>{games.name}</Card.Title>
 
-        <Box display="flex" justifyContent={"space-between"}>
-          <PlatformList platform={platformSlug} />
-          <CriticScore metacritic={games.metacritic} />
-        </Box>
-      </Card.Body>
-    </Card.Root>
+          <Box display="flex" justifyContent={"space-between"}>
+            <PlatformList platform={platformSlug} />
+            <CriticScore metacritic={games.metacritic} />
+          </Box>
+        </Card.Body>
+      </Card.Root>
+    </>
   );
 }
 

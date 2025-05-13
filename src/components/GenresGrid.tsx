@@ -25,7 +25,7 @@ function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
           />
           <Link
             variant={selectedGenre?.id === genre.id ? "underline" : "plain"}
-            colorPalette={selectedGenre?.id === genre.id ? "teal" : ""}
+            colorPalette={selectedGenre?.id === genre.id ? "green" : ""}
             fontWeight={selectedGenre?.id === genre.id ? "medium" : "normal"}
             ml={2}
             onClick={() => {
