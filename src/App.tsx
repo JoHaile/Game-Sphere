@@ -1,9 +1,13 @@
-import { Grid, GridItem, HStack } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
 import GenresGrid from "./components/GenresGrid";
+import { useState } from "react";
+import { type Genre } from "./hooks/useGenres";
 
 const App = () => {
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+
   return (
     <>
       <NavBar />
@@ -16,7 +20,7 @@ const App = () => {
           py={"10px"}
           px={{ base: "10px", lg: "30px" }}
         >
-          <GenresGrid />
+          <GenresGrid onSelectGenre={(genre) => setSelectedGenre(genre)} />
         </GridItem>
 
         <GridItem
@@ -28,7 +32,7 @@ const App = () => {
           {/* for the dynamic headers */}
           {/* <HStack>nav bar</HStack> */}
 
-          <GameGrid />
+          <GameGrid selectedGenre={selectedGenre} />
         </GridItem>
       </Grid>
     </>
