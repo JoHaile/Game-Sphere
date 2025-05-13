@@ -1,15 +1,14 @@
 import useGenres, { type Genre } from "@/hooks/useGenres";
 import CroppedImage from "@/services/image-client";
 import { HStack, Image, Link, Spinner } from "@chakra-ui/react";
-import { useState } from "react";
 
 interface Props {
   onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-function GenresGrid({ onSelectGenre }: Props) {
+function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
   const { data, isLoading } = useGenres();
-  const [genreId, setGenreId] = useState<number>();
 
   return (
     <>
@@ -25,12 +24,12 @@ function GenresGrid({ onSelectGenre }: Props) {
             src={CroppedImage(genre.image_background)}
           />
           <Link
-            variant={genreId === genre.id ? "underline" : "plain"}
-            colorPalette={genreId === genre.id ? "teal" : ""}
+            variant={selectedGenre?.id === genre.id ? "underline" : "plain"}
+            colorPalette={selectedGenre?.id === genre.id ? "teal" : ""}
+            fontWeight={selectedGenre?.id === genre.id ? "medium" : "normal"}
             ml={2}
             onClick={() => {
               onSelectGenre(genre);
-              setGenreId(genre.id);
             }}
             cursor={"pointer"}
           >

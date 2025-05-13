@@ -20,7 +20,10 @@ const App = () => {
           py={"10px"}
           px={{ base: "10px", lg: "30px" }}
         >
-          <GenresGrid onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenresGrid
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
 
         <GridItem
