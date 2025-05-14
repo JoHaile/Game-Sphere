@@ -15,8 +15,6 @@ function GameCard({ games }: Props) {
     (platform) => platform.platform
   );
 
-  console.log(platformSlug);
-
   return (
     <>
       <Card.Root overflow="hidden">
