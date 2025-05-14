@@ -11,43 +11,37 @@ interface Props {
 function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
   const { data, isLoading } = useGenres();
   // give an error when called
-  const genreId = 2;
 
   return (
     <>
       {isLoading && <Spinner />}
 
-      {data.map(
-        (genre) =>
-          genre.id !== genreId && (
-            <HStack key={genre.id} mb="1rem">
-              <Image
-                rounded="md"
-                boxSize="40px"
-                fit="cover"
-                src={
-                  genre.image_background
-                    ? CroppedImage(genre.image_background)
-                    : imagePlaceholder
-                }
-              />
-              <Link
-                variant={selectedGenre?.id === genre.id ? "underline" : "plain"}
-                colorPalette={selectedGenre?.id === genre.id ? "green" : ""}
-                fontWeight={
-                  selectedGenre?.id === genre.id ? "medium" : "normal"
-                }
-                ml={2}
-                onClick={() => {
-                  onSelectGenre(genre);
-                }}
-                cursor={"pointer"}
-              >
-                {genre.name}
-              </Link>
-            </HStack>
-          )
-      )}
+      {data.map((genre) => (
+        <HStack key={genre.id} mb="1rem">
+          <Image
+            rounded="md"
+            boxSize="40px"
+            fit="cover"
+            src={
+              genre.image_background
+                ? CroppedImage(genre.image_background)
+                : imagePlaceholder
+            }
+          />
+          <Link
+            variant={selectedGenre?.id === genre.id ? "underline" : "plain"}
+            colorPalette={selectedGenre?.id === genre.id ? "green" : ""}
+            fontWeight={selectedGenre?.id === genre.id ? "medium" : "normal"}
+            ml={2}
+            onClick={() => {
+              onSelectGenre(genre);
+            }}
+            cursor={"pointer"}
+          >
+            {genre.name}
+          </Link>
+        </HStack>
+      ))}
     </>
   );
 }

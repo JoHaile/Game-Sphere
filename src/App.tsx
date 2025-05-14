@@ -12,6 +12,7 @@ export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchGames: string;
 }
 
 const App = () => {
@@ -19,7 +20,11 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
+      <NavBar
+        onGameSearch={(game) =>
+          setGameQuery({ ...gameQuery, searchGames: game })
+        }
+      />
       <Grid gridTemplateColumns={`repeat(6, 1fr)`}>
         <GridItem
           // bg={"dodgerblue"}
@@ -43,7 +48,7 @@ const App = () => {
           colSpan={{ base: 5, md: 5, lg: 5 }}
           px={{ base: "30px", md: "20px" }}
         >
-          <Flex justify={"flex-start"} mb={3} gap={3}>
+          <Flex flexWrap={"wrap"} mb={3} gap={{ base: 1, lg: 3 }}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={(selectedPlatform) =>

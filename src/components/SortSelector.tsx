@@ -9,22 +9,26 @@ interface Props {
 function SortSelector({ onSortSelect, currentSortOrder }: Props) {
   const sortOrder = [
     { value: "", label: "Relevance" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average Rating" },
     { value: "-released", label: "Release Date" },
-    { value: "-name", label: "Name" },
-    { value: "-created", label: "Game Created" },
-    { value: "-updated", label: "New Updates" },
+    { value: "name", label: "Name" },
+    // { value: "-updated", label: "New Updates" },
+    // { value: "created", label: "Game Created" },
 
-    //! don't work for some reason
-    // { value: "-metacritic", label: "Popularity" },
-    // { value: "-rating", label: "Average Rating" },
+    //! don't work when they are reversed when using(-)
   ];
   const sortLabel = sortOrder.find((l) => l.value === currentSortOrder);
 
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
-        <Button variant="outline" outline={"none"}>
-          {currentSortOrder ? sortLabel?.label : "Sort by Relevance"}
+        <Button
+          variant="outline"
+          outline={"none"}
+          size={{ base: "xs", lg: "md" }}
+        >
+          {currentSortOrder ? sortLabel?.label : "Relevance"}
           <Icon as={FaChevronDown} size={"sm"} />
         </Button>
       </Menu.Trigger>

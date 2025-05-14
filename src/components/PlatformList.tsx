@@ -29,10 +29,14 @@ function PlatformList({ platform }: Props) {
     ios: MdPhoneIphone,
     web: FaGlobe,
   };
+
   return (
-    <HStack color="gray.500" my={"10px"}>
-      {platform.map((plat) => {
-        return <Icon key={plat.id} as={iconsMap[plat.slug]}></Icon>;
+    <HStack color={"gray.500"}>
+      {platform.map((p) => {
+        const IconComponent = iconsMap[p.slug];
+        return IconComponent ? (
+          <Icon key={p.slug} as={IconComponent} boxSize="1.2rem" />
+        ) : null;
       })}
     </HStack>
   );

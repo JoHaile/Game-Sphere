@@ -12,19 +12,17 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data, error } = usePlatform();
 
   //! for some reason these platforms id don't work
-  const linux = 6,
-    atari = 9,
-    commodore = 10,
-    sega = 11,
-    deo = 12,
-    neo = 13;
 
   if (error) return null;
 
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
-        <Button variant="outline" outline={"none"}>
+        <Button
+          variant="outline"
+          outline={"none"}
+          size={{ base: "xs", lg: "md" }}
+        >
           {selectedPlatform ? selectedPlatform?.name : "Platform"}
           <Icon as={FaChevronDown} size={"sm"} />
         </Button>
@@ -33,24 +31,16 @@ function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
       <Portal>
         <Menu.Positioner>
           <Menu.Content>
-            {data.map(
-              (plat) =>
-                plat.id !== linux &&
-                plat.id !== atari &&
-                plat.id !== sega &&
-                plat.id !== neo &&
-                plat.id !== deo &&
-                plat.id !== commodore && (
-                  <Menu.Item
-                    key={plat.id}
-                    value={plat.name}
-                    cursor={"pointer"}
-                    onClick={() => onSelectPlatform(plat)}
-                  >
-                    {plat.name}
-                  </Menu.Item>
-                )
-            )}
+            {data.map((plat) => (
+              <Menu.Item
+                key={plat.id}
+                value={plat.name}
+                cursor={"pointer"}
+                onClick={() => onSelectPlatform(plat)}
+              >
+                {plat.name}
+              </Menu.Item>
+            ))}
           </Menu.Content>
         </Menu.Positioner>
       </Portal>
