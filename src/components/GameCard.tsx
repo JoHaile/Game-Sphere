@@ -3,6 +3,7 @@ import { AspectRatio, Box, Card, Image } from "@chakra-ui/react";
 import PlatformList from "./PlatformList";
 import CriticScore from "./CriticScore";
 import CroppedImage from "@/services/image-client";
+import imagePlaceholder from "../assets/Image Placeholder/no-image-placeholder-6f3882e0.webp";
 // import CroppedImage from "@/services/image-client";
 
 interface Props {
@@ -14,15 +15,22 @@ function GameCard({ games }: Props) {
     (platform) => platform.platform
   );
 
+  console.log(platformSlug);
+
   return (
     <>
       <Card.Root overflow="hidden">
-        <AspectRatio ratio={{ base: 1 / 1, md: 1 / 1 }}>
-          {/* for offline */}
-          {/* <Image src={games.background_image} /> */}
+        {/* for offline */}
+        {/* <Image src={games.background_image} /> */}
 
-          <Image src={CroppedImage(games.background_image)} />
-        </AspectRatio>
+        <Image
+          src={
+            games.background_image
+              ? CroppedImage(games.background_image)
+              : imagePlaceholder
+          }
+          aspectRatio={1 / 1}
+        />
 
         <Card.Body>
           <Card.Title>{games.name}</Card.Title>
