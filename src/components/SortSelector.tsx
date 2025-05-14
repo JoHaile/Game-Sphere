@@ -13,7 +13,8 @@ function SortSelector({ onSortSelect, currentSortOrder }: Props) {
     { value: "-name", label: "Name" },
     { value: "-created", label: "Game Created" },
     { value: "-updated", label: "New Updates" },
-    // ? don't work for some reason
+
+    //! don't work for some reason
     // { value: "-metacritic", label: "Popularity" },
     // { value: "-rating", label: "Average Rating" },
   ];
@@ -36,7 +37,9 @@ function SortSelector({ onSortSelect, currentSortOrder }: Props) {
                 key={order.value}
                 value={order.value}
                 cursor={"pointer"}
-                onClick={() => onSortSelect(order.value)}
+                onClick={() => {
+                  onSortSelect(order.value);
+                }}
               >
                 {order.label}
               </MenuItem>

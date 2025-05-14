@@ -1,5 +1,5 @@
 import type { Game } from "../hooks/useGames";
-import { AspectRatio, Box, Card, Image } from "@chakra-ui/react";
+import { Box, Card, Image } from "@chakra-ui/react";
 import PlatformList from "./PlatformList";
 import CriticScore from "./CriticScore";
 import CroppedImage from "@/services/image-client";

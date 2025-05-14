@@ -10,7 +10,8 @@ interface Props {
 
 function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data, error } = usePlatform();
-  //? for some reason these platforms id won't work
+
+  //! for some reason these platforms id don't work
   const linux = 6,
     atari = 9,
     commodore = 10,
