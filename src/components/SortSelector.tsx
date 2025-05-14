@@ -11,9 +11,11 @@ function SortSelector({ onSortSelect, currentSortOrder }: Props) {
     { value: "", label: "Relevance" },
     { value: "-released", label: "Release Date" },
     { value: "-name", label: "Name" },
-    { value: "-created", label: "created" },
-    { value: "-metacritic", label: "Popularity" },
-    { value: "-rating", label: "Average Rating" },
+    { value: "-created", label: "Game Created" },
+    { value: "-updated", label: "New Updates" },
+    // ? don't work for some reason
+    // { value: "-metacritic", label: "Popularity" },
+    // { value: "-rating", label: "Average Rating" },
   ];
   const sortLabel = sortOrder.find((l) => l.value === currentSortOrder);
 
