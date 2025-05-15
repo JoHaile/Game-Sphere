@@ -9,7 +9,9 @@ interface Props {
 }
 
 function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
-  const { data, isLoading } = useGenres();
+  const { data, isLoading, error } = useGenres();
+
+  if (error) return null;
 
   return (
     <>
