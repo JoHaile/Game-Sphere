@@ -22,9 +22,9 @@ function GameGrid({ gameQuery }: Props) {
 
       {isLoading && Skeleton.map((g) => <GameCardSkeleton key={g} />)}
 
-      {data.map((g) => (
-        <GameCard games={g} key={g.id} />
-      ))}
+      {data
+        ? data.map((g) => <GameCard games={g} key={g.id} />)
+        : "Network Error"}
     </SimpleGrid>
   );
 }
