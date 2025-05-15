@@ -4,6 +4,7 @@ import PlatformList from "./PlatformList";
 import CriticScore from "./CriticScore";
 import CroppedImage from "@/services/image-client";
 import imagePlaceholder from "../assets/Image Placeholder/no-image-placeholder-6f3882e0.webp";
+import Rating from "./Rating";
 // import CroppedImage from "@/services/image-client";
 
 interface Props {
@@ -35,6 +36,10 @@ function GameCard({ games }: Props) {
             <CriticScore metacritic={games.metacritic} />
           </Box>
         </Card.Body>
+
+        <Card.Footer>
+          <Rating rating={games.rating_top} />
+        </Card.Footer>
       </Card.Root>
     </>
   );

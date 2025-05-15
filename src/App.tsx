@@ -28,7 +28,6 @@ const App = () => {
       />
       <Grid gridTemplateColumns={`repeat(6, 1fr)`}>
         <GridItem
-          // bg={"dodgerblue"}
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
           h="100"
