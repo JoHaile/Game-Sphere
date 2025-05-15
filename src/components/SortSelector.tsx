@@ -15,8 +15,6 @@ function SortSelector({ onSortSelect, currentSortOrder }: Props) {
     { value: "name", label: "Name" },
     // { value: "-updated", label: "New Updates" },
     // { value: "created", label: "Game Created" },
-
-    //! don't work when they are reversed when using(-)
   ];
   const sortLabel = sortOrder.find((l) => l.value === currentSortOrder);
 

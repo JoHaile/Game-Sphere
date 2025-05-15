@@ -11,8 +11,6 @@ interface Props {
 function PlatformSelector({ onSelectPlatform, selectedPlatform }: Props) {
   const { data, error } = usePlatform();
 
-  //! for some reason these platforms id don't work
-
   if (error) return null;
 
   return (
