@@ -10,7 +10,6 @@ interface Props {
 
 function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
   const { data, isLoading } = useGenres();
-  // give an error when called
 
   return (
     <>
@@ -33,9 +32,7 @@ function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
             colorPalette={selectedGenre?.id === genre.id ? "green" : ""}
             fontWeight={selectedGenre?.id === genre.id ? "medium" : "normal"}
             ml={2}
-            onClick={() => {
-              onSelectGenre(genre);
-            }}
+            onClick={() => onSelectGenre(genre)}
             cursor={"pointer"}
           >
             {genre.name}
