@@ -15,7 +15,7 @@ function NavBar({ onGameSearch }: Props) {
       <Text
         textWrap={"nowrap"}
         mr={{ base: "5px", md: "1rem" }}
-        textStyle={{ base: "2xs", md: "md" }}
+        textStyle={{ base: "xs", md: "md" }}
       >
         Game Sphere
       </Text>

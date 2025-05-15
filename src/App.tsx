@@ -1,4 +1,4 @@
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
 import GameGrid from "./components/GameGrid";
 import NavBar from "./components/NavBar";
 import GenresGrid from "./components/GenresGrid";
@@ -7,6 +7,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import { type Genre } from "./hooks/useGenres";
 import { type Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import DynamicHeader from "./components/DynamicHeader";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -31,9 +32,11 @@ const App = () => {
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
           h="100"
-          py={"10px"}
           px={{ base: "10px", lg: "30px" }}
         >
+          <Heading as="h1" mb={3}>
+            Genres
+          </Heading>
           <GenresGrid
             selectedGenre={gameQuery.genre}
             onSelectGenre={(genre) =>
@@ -48,7 +51,9 @@ const App = () => {
           colSpan={{ base: 5, md: 5, lg: 5 }}
           px={{ base: "30px", md: "20px" }}
         >
-          <Flex flexWrap={"wrap"} mb={3} gap={{ base: 1, lg: 3 }}>
+          <DynamicHeader gameQuery={gameQuery} />
+
+          <Flex flexWrap={"wrap"} my={3} gap={{ base: 1, lg: 3 }}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={(selectedPlatform) =>
