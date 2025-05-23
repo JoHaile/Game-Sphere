@@ -10,3 +10,7 @@ body {
   margin: auto;
   position: relative;
 }
+
+form {
+  width: 100%;
+}
