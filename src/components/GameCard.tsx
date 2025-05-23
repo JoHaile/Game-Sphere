@@ -18,17 +18,12 @@ function GameCard({ games }: Props) {
 
   return (
     <>
-      <Card.Root
-        overflow="hidden"
-        variant={"elevated"}
-        maxWidth={"500px"}
-        _hover={{
-          scale: "1.1",
-        }}
-        cursor={"pointer"}
-        transition={"all .25s ease"}
-      >
+      <Card.Root overflow="hidden" variant={"elevated"} maxWidth={"500px"}>
         <Image
+          transition={"all .35s ease"}
+          _hover={{
+            scale: "1.2",
+          }}
           src={
             games.background_image
               ? CroppedImage(games.background_image)
