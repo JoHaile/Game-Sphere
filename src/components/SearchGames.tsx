@@ -8,6 +8,7 @@ interface Props {
 
 function SearchGames({ onGameSearch }: Props) {
   const ref = useRef<HTMLInputElement>(null);
+
   return (
     <form
       onSubmit={(e) => {
