@@ -33,9 +33,12 @@ function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
             variant={selectedGenre?.id === genre.id ? "underline" : "plain"}
             colorPalette={selectedGenre?.id === genre.id ? "green" : ""}
             fontWeight={selectedGenre?.id === genre.id ? "medium" : "normal"}
-            ml={2}
-            onClick={() => onSelectGenre(genre)}
             cursor={"pointer"}
+            ml={2}
+            _hover={{
+              color: "#86efac",
+            }}
+            onClick={() => onSelectGenre(genre)}
           >
             {genre.name}
           </Link>

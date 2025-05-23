@@ -56,7 +56,7 @@ const App = () => {
         >
           <DynamicHeader gameQuery={gameQuery} />
 
-          <Flex flexWrap={"wrap"} my={3} gap={{ base: 1, lg: 3 }}>
+          <Flex flexWrap={"wrap"} m="1rem 0 2rem 0" gap={{ base: 1, lg: 3 }}>
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectPlatform={(selectedPlatform) =>

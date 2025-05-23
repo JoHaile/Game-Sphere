@@ -18,20 +18,28 @@ function GameCard({ games }: Props) {
 
   return (
     <>
-      <Card.Root overflow="hidden" variant={"elevated"} maxWidth={"500px"}>
+      <Card.Root
+        overflow="hidden"
+        variant={"elevated"}
+        maxWidth={"500px"}
+        _hover={{
+          scale: "1.1",
+        }}
+        cursor={"pointer"}
+        transition={"all .25s ease"}
+      >
         <Image
           src={
             games.background_image
               ? CroppedImage(games.background_image)
               : imagePlaceholder
           }
-          aspectRatio={1 / 1}
+          aspectRatio={3 / 2}
         />
 
         <Card.Body>
           <Card.Title>{games.name}</Card.Title>
-
-          <Box display="flex" justifyContent={"space-between"}>
+          <Box display="flex" justifyContent={"space-between"} mt={2}>
             <PlatformList platform={platformSlug} />
             <CriticScore metacritic={games.metacritic} />
           </Box>
