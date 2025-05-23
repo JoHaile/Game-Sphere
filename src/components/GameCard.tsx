@@ -5,7 +5,6 @@ import CriticScore from "./CriticScore";
 import CroppedImage from "@/services/image-client";
 import imagePlaceholder from "../assets/Image Placeholder/no-image-placeholder-6f3882e0.webp";
 import Rating from "./Rating";
-// import CroppedImage from "@/services/image-client";
 
 interface Props {
   games: Game;
@@ -18,23 +17,24 @@ function GameCard({ games }: Props) {
 
   return (
     <>
-      <Card.Root overflow="hidden" variant={"elevated"} maxWidth={"500px"}>
+      <Card.Root overflow="hidden" variant="elevated" maxWidth="500px">
         <Image
-          transition={"all .35s ease"}
-          _hover={{
-            scale: "1.2",
-          }}
           src={
             games.background_image
               ? CroppedImage(games.background_image)
               : imagePlaceholder
           }
           aspectRatio={3 / 2}
+          cursor="pointer"
+          transition="all .35s ease"
+          _hover={{
+            scale: "1.1",
+          }}
         />
 
         <Card.Body>
           <Card.Title>{games.name}</Card.Title>
-          <Box display="flex" justifyContent={"space-between"} mt={2}>
+          <Box display="flex" justifyContent="space-between" mt={2}>
             <PlatformList platform={platformSlug} />
             <CriticScore metacritic={games.metacritic} />
           </Box>
