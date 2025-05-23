@@ -45,7 +45,11 @@ const App = () => {
         </GridItem>
 
         <GridItem
-          // bg="purple.400"
+          // to make the game cards scroll independently
+          height={"150vh"}
+          overflowY={"auto"}
+          scrollbar={"hidden"}
+          //
           as="main"
           colSpan={{ base: 5, md: 5, lg: 5 }}
           px={{ base: "30px", md: "20px" }}
