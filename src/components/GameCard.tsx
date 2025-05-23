@@ -12,9 +12,9 @@ interface Props {
 }
 
 function GameCard({ games }: Props) {
-  const platformSlug = games.parent_platforms.map(
-    (platform) => platform.platform
-  );
+  const platformSlug = games.parent_platforms
+    ? games.parent_platforms.map((platform) => platform.platform)
+    : [];
 
   return (
     <>

@@ -3,7 +3,6 @@ import { FaSearch } from "react-icons/fa";
 
 interface Props {
   onGameSearch: (game: string) => void;
-  //   searchedGames: string;
 }
 
 function SearchGames({ onGameSearch }: Props) {
