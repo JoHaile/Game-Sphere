@@ -21,7 +21,7 @@ function GenresGrid({ onSelectGenre, selectedGenre }: Props) {
         <HStack key={genre.id} mb="1rem">
           <Image
             rounded="md"
-            boxSize="40px"
+            boxSize={{ base: "30px", lg: "40px" }}
             fit="cover"
             src={
               genre.image_background

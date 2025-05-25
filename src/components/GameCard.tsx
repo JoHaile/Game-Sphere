@@ -43,7 +43,7 @@ function GameCard({ games }: Props) {
 
           <Card.Title
             _hover={{
-              color: "gray.400",
+              color: "green.300",
               transition: "all .3s ease",
             }}
             cursor="pointer"
