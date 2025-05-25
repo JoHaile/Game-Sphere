@@ -17,7 +17,7 @@ function GameCard({ games }: Props) {
 
   return (
     <>
-      <Card.Root overflow="hidden" variant="elevated" maxWidth="500px">
+      <Card.Root overflow="hidden" variant="elevated" maxWidth="300px">
         <Image
           src={
             games.background_image
