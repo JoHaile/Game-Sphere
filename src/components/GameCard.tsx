@@ -17,7 +17,15 @@ function GameCard({ games }: Props) {
 
   return (
     <>
-      <Card.Root overflow="hidden" variant="elevated" maxWidth="300px">
+      <Card.Root
+        overflow="hidden"
+        variant="elevated"
+        maxWidth="300px"
+        _hover={{
+          scale: "1.05",
+          transition: "all .35s ease",
+        }}
+      >
         <Image
           src={
             games.background_image
@@ -25,19 +33,23 @@ function GameCard({ games }: Props) {
               : imagePlaceholder
           }
           aspectRatio={3 / 2}
-          cursor="pointer"
-          transition="all .35s ease"
-          _hover={{
-            scale: "1.1",
-          }}
         />
 
         <Card.Body>
-          <Card.Title>{games.name}</Card.Title>
-          <Box display="flex" justifyContent="space-between" mt={2}>
+          <Box display="flex" justifyContent="space-between" mb={2}>
             <PlatformList platform={platformSlug} />
             <CriticScore metacritic={games.metacritic} />
           </Box>
+
+          <Card.Title
+            _hover={{
+              color: "gray.400",
+              transition: "all .3s ease",
+            }}
+            cursor="pointer"
+          >
+            {games.name}
+          </Card.Title>
         </Card.Body>
 
         <Card.Footer>

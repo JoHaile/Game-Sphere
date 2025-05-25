@@ -1,7 +1,7 @@
-import { Text } from "@chakra-ui/react";
-import { FaBullseye } from "react-icons/fa";
-import { FaRegThumbsUp } from "react-icons/fa";
-import { FaMeh } from "react-icons/fa";
+import { Image, Text } from "@chakra-ui/react";
+import bullseye from "../assets/Emojis/bulls-eye.webp";
+import thumbsUp from "../assets/Emojis/thumbs-up.webp";
+import meh from "../assets/Emojis/meh.webp";
 
 interface Props {
   rating: number;
@@ -10,11 +10,11 @@ interface Props {
 function Rating({ rating }: Props) {
   const emojis =
     rating === 5 ? (
-      <FaBullseye color="#86efac" />
+      <Image src={bullseye} boxSize={35} />
     ) : rating === 4 ? (
-      <FaRegThumbsUp color="#c6a824" />
+      <Image src={thumbsUp} boxSize={30} />
     ) : rating === 4 ? (
-      <FaMeh color="gray" />
+      <Image src={meh} boxSize={35} />
     ) : (
       ""
     );
