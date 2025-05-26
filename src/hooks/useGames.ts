@@ -1,4 +1,4 @@
-import type { GameQuery } from "@/App";
+import { type GameQuery } from "./useGameQuery";
 import useData from "./useData";
 
 export interface Platform {
@@ -10,6 +10,7 @@ export interface Platform {
 export interface Game {
   id: number;
   name: string;
+  slug: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;
@@ -25,6 +26,7 @@ const useGames = (gameQuery: GameQuery) =>
         parent_platforms: gameQuery.platform?.id,
         ordering: gameQuery.sortOrder,
         search: gameQuery.searchGames,
+        slug: gameQuery.slug,
       },
     },
     [gameQuery]

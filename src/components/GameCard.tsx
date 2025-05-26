@@ -5,6 +5,7 @@ import CriticScore from "./CriticScore";
 import CroppedImage from "@/services/image-client";
 import imagePlaceholder from "../assets/Image Placeholder/no-image-placeholder-6f3882e0.webp";
 import Rating from "./Rating";
+import { Link } from "react-router";
 
 interface Props {
   games: Game;
@@ -48,7 +49,7 @@ function GameCard({ games }: Props) {
             }}
             cursor="pointer"
           >
-            {games.name}
+            <Link to={"/games/" + games.slug}>{games.name}</Link>
           </Card.Title>
         </Card.Body>
 

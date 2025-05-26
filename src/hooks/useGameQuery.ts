@@ -7,6 +7,7 @@ export interface GameQuery {
   platform: Platform | null;
   sortOrder: string;
   searchGames: string;
+  slug: string;
 }
 
 const useGameQuery = () => {
