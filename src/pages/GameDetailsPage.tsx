@@ -37,13 +37,8 @@ function GameDetailsPage() {
           {data && <GameAttributes data={data} />}
         </GridItem>
 
-        <GridItem
-          // bg={"blue.400"}
-          colSpan={{ base: 6, lg: 3 }}
-          textAlign="center"
-          // height={"100vh"}
-        >
-          <Heading pb={4}>Trailer and ScreenShoots</Heading>
+        <GridItem colSpan={{ base: 6, lg: 3 }} textAlign="center">
+          <Heading pb={4}>Trailer</Heading>
 
           <GameTrailer />
         </GridItem>

@@ -21,7 +21,8 @@ function GameScreenshots() {
       <Heading textAlign="center" mb={4}>
         Game Screenshots
       </Heading>
-      <SimpleGrid columns={3} gap={3}>
+
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={3} px={3}>
         {data?.map((i) => <Image key={i.id} src={CroppedImage(i.image)} />)}
       </SimpleGrid>
     </>
