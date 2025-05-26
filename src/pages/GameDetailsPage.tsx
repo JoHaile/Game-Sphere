@@ -9,7 +9,7 @@ function GameDetailsPage() {
   const { slug } = useParams();
   const { data } = useGame(`/games/${slug}`);
 
-  console.log(data);
+  console.log(data?.id);
 
   return (
     <>
