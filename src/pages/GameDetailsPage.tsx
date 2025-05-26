@@ -1,10 +1,8 @@
-import CriticScore from "@/components/CriticScore";
-import DefinitionItem from "@/components/DefinitionItem";
 import ExpandibleText from "@/components/ExpandibleText";
 import GameAttributes from "@/components/GameAttributes";
 import NavBar from "@/components/NavBar";
 import useGame from "@/hooks/useGame";
-import { Grid, GridItem, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 function GameDetailsPage() {
