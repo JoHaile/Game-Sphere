@@ -1,6 +1,7 @@
+import DefinitionItem from "@/components/DefinitionItem";
 import ExpandibleText from "@/components/ExpandibleText";
 import NavBar from "@/components/NavBar";
-import useGame from "@/hooks/useGame";
+import useGame, { type GameDetails } from "@/hooks/useGame";
 import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
@@ -21,6 +22,8 @@ function GameDetailsPage() {
           <Text textStyle={{ base: "sm", lg: "md" }} mb="20px">
             {data && <ExpandibleText text={data?.description_raw} />}
           </Text>
+
+          <DefinitionItem data={data ? data : ({} as GameDetails)} />
         </GridItem>
 
         <GridItem
