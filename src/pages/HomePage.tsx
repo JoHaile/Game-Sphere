@@ -1,23 +1,14 @@
 import { Flex, Grid, GridItem, Heading } from "@chakra-ui/react";
-import GameGrid from "./components/GameGrid";
-import NavBar from "./components/NavBar";
-import GenresGrid from "./components/GenresGrid";
-import { useState } from "react";
-import PlatformSelector from "./components/PlatformSelector";
-import { type Genre } from "./hooks/useGenres";
-import { type Platform } from "./hooks/useGames";
-import SortSelector from "./components/SortSelector";
-import DynamicHeader from "./components/DynamicHeader";
+import GameGrid from "../components/GameGrid";
+import NavBar from "../components/NavBar";
+import GenresGrid from "../components/GenresGrid";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
+import DynamicHeader from "../components/DynamicHeader";
+import useGameQuery from "@/hooks/useGameQuery";
 
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  sortOrder: string;
-  searchGames: string;
-}
-
-const App = () => {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
+const HomePage = () => {
+  const { gameQuery, setGameQuery } = useGameQuery();
 
   return (
     <>
@@ -26,6 +17,7 @@ const App = () => {
           setGameQuery({ ...gameQuery, searchGames: game })
         }
       />
+
       <Grid gridTemplateColumns={`repeat(6, 1fr)`}>
         <GridItem
           as="aside"
@@ -78,4 +70,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default HomePage;
