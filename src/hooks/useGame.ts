@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import apiClient from "@/services/api-client";
 import { CanceledError } from "axios";
-import type { Game } from "./useGames";
 
-function useGame(slug: string) {
-  const [data, setData] = useState<Game>();
+function useGame<T>(slug: string) {
+  const [data, setData] = useState<T>();
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(false);
 
@@ -18,7 +17,8 @@ function useGame(slug: string) {
       })
       .then((res) => {
         setLoading(false);
-        setData(res.data);
+        res.data.results ? setData(res.data.results) : setData(res.data);
+        // setData(res.data);
       })
       .catch((err) => {
         if (err instanceof CanceledError) return;
