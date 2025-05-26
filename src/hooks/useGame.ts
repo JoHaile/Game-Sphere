@@ -1,17 +1,10 @@
 import { useEffect, useState } from "react";
 import apiClient from "@/services/api-client";
 import { CanceledError } from "axios";
-import type { Platform } from "./useGames";
-
-export interface GameDetails {
-  id: number;
-  name: string;
-  description_raw: string;
-  platforms: Platform | null;
-}
+import type { Game } from "./useGames";
 
 function useGame(slug: string) {
-  const [data, setData] = useState<GameDetails>();
+  const [data, setData] = useState<Game>();
   const [error, setError] = useState();
   const [isLoading, setLoading] = useState(false);
 

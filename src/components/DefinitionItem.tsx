@@ -1,20 +1,19 @@
-import type { GameDetails } from "@/hooks/useGame";
-import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
+import type { ReactNode } from "react";
 
 interface Props {
-  data: GameDetails;
+  term: String;
+  children: ReactNode | ReactNode[];
 }
 
-function DefinitionItem({ data }: Props) {
+function DefinitionItem({ term, children }: Props) {
   return (
-    <SimpleGrid minChildWidth={"50%"}>
-      <Box>
-        <Heading>Platforms</Heading>
-      </Box>
-      <Box bg={"blue.300"}>hello</Box>
-      <Box bg={"pink.400"}>hello</Box>
-      <Box bg={"gray.300"}>hello</Box>
-    </SimpleGrid>
+    <Box>
+      <Heading color="gray.600" as={"dt"}>
+        {term}
+      </Heading>
+      <dd>{children}</dd>
+    </Box>
   );
 }
 
