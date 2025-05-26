@@ -1,5 +1,6 @@
 import ExpandibleText from "@/components/ExpandibleText";
 import GameAttributes from "@/components/GameAttributes";
+import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import NavBar from "@/components/NavBar";
 import useGame from "@/hooks/useGame";
@@ -11,6 +12,7 @@ function GameDetailsPage() {
   const { slug } = useParams();
   const { data, error, isLoading } = useGame<Game>(`/games/${slug}`);
   // console.log(data?.id);
+  // console.log(slug);
 
   if (isLoading) return <Spinner />;
   if (error) throw error;
@@ -25,7 +27,9 @@ function GameDetailsPage() {
         padding={{ base: 3, md: 5 }}
       >
         <GridItem colSpan={{ base: 6, lg: 3 }}>
-          <Heading textAlign="center">{data?.name}</Heading>
+          <Heading textAlign="center" mb={4}>
+            {data?.name}
+          </Heading>
 
           <Text textStyle={{ base: "sm", lg: "md" }} mb="20px">
             {data && <ExpandibleText text={data?.description_raw} />}
@@ -37,13 +41,14 @@ function GameDetailsPage() {
           // bg={"blue.400"}
           colSpan={{ base: 6, lg: 3 }}
           textAlign="center"
-          height={"100vh"}
+          // height={"100vh"}
         >
-          <Heading>Trailer and ScreenShoots</Heading>
+          <Heading pb={4}>Trailer and ScreenShoots</Heading>
 
           <GameTrailer />
         </GridItem>
       </Grid>
+      <GameScreenshots />
     </>
   );
 }
