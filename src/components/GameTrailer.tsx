@@ -14,7 +14,6 @@ function GameTrailer() {
   const { data, error, isLoading } = useGame<Trailer[]>(
     `/games/${slug}/movies`
   );
-  // console.log(data);
 
   if (isLoading) return <Spinner />;
   if (error) throw error;

@@ -14,8 +14,6 @@ function GameScreenshots() {
   const { slug } = useParams();
   const { data } = useGame<Screenshot[]>(`/games/${slug}/screenshots`);
 
-  console.log(data && data[0].id);
-
   return (
     <>
       <Heading textAlign="center" mb={4}>

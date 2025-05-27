@@ -12,7 +12,7 @@ import { useNavigate, useParams } from "react-router-dom";
 function GameDetailsPage() {
   const { slug } = useParams();
   const { data, error, isLoading } = useGame<Game>(`/games/${slug}`);
-  const { gameQuery, setGameQuery } = useGameQuery();
+  const { setGameQuery } = useGameQuery();
   const nav = useNavigate();
   // console.log(data?.id);
   // console.log(slug);
@@ -23,7 +23,7 @@ function GameDetailsPage() {
     <>
       <NavBar
         onGameSearch={(game) => {
-          setGameQuery({ ...gameQuery, searchGames: game });
+          setGameQuery((gameQuery) => ({ ...gameQuery, searchGames: game }));
           nav("/");
         }}
       />
