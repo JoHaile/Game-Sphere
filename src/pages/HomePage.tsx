@@ -22,7 +22,9 @@ const HomePage = () => {
         <GridItem
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
-          h="100"
+          height="100vh"
+          overflowY="scroll"
+          scrollbar={"hidden"}
           px={{ base: "10px", lg: "30px" }}
         >
           <Heading as="h1" mb={3}>
