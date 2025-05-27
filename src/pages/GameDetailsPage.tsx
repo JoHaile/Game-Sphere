@@ -4,22 +4,31 @@ import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import NavBar from "@/components/NavBar";
 import useGame from "@/hooks/useGame";
+import useGameQuery from "@/hooks/useGameQuery";
 import type { Game } from "@/hooks/useGames";
 import { Grid, GridItem, Heading, Spinner, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function GameDetailsPage() {
   const { slug } = useParams();
   const { data, error, isLoading } = useGame<Game>(`/games/${slug}`);
+  const { gameQuery, setGameQuery } = useGameQuery();
+  const nav = useNavigate();
   // console.log(data?.id);
   // console.log(slug);
 
-  if (isLoading) return <Spinner />;
   if (error) throw error;
 
   return (
     <>
-      <NavBar onGameSearch={(game) => game} />
+      <NavBar
+        onGameSearch={(game) => {
+          setGameQuery({ ...gameQuery, searchGames: game });
+          nav("/");
+        }}
+      />
+
+      {isLoading && <Spinner size="lg" />}
 
       <Grid
         gridTemplateColumns="repeat(6, 1fr)"
