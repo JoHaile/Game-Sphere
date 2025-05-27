@@ -52,6 +52,7 @@ function GameDetailsPage() {
           <GameTrailer />
         </GridItem>
       </Grid>
+
       <GameScreenshots />
     </>
   );
