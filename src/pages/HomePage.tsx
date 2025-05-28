@@ -6,6 +6,7 @@ import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
 import DynamicHeader from "../components/DynamicHeader";
 import useGameQuery from "@/hooks/useGameQuery";
+import Footer from "@/components/Footer";
 
 const HomePage = () => {
   const { gameQuery, setGameQuery } = useGameQuery();
@@ -22,7 +23,7 @@ const HomePage = () => {
         <GridItem
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
-          height="100vh"
+          height="110vh"
           overflowY="scroll"
           scrollbar={"hidden"}
           px={{ base: "10px", lg: "30px" }}
@@ -66,6 +67,8 @@ const HomePage = () => {
           </Flex>
 
           <GameGrid gameQuery={gameQuery} />
+
+          <Footer />
         </GridItem>
       </Grid>
     </>

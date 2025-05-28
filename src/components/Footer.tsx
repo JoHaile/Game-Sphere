@@ -6,7 +6,7 @@ function Footer() {
       <HStack padding={5} color="gray.400">
         <Text>Developed By Yohannes Haile.</Text>
         <Spacer />
-        <Text>CopyRight © 2025</Text>
+        <Text>©2025 All Right Reserved</Text>
       </HStack>
     </footer>
   );
