@@ -23,7 +23,7 @@ const HomePage = () => {
         <GridItem
           as="aside"
           colSpan={{ base: 1, md: 1, lg: 1 }}
-          height="110vh"
+          height="100vh"
           overflowY="scroll"
           scrollbar={"hidden"}
           px={{ base: "10px", lg: "30px" }}
@@ -41,7 +41,7 @@ const HomePage = () => {
 
         <GridItem
           // to make the game cards scroll independently
-          height={"150vh"}
+          height={"100vh"}
           overflowY={"auto"}
           scrollbar={"hidden"}
           //
